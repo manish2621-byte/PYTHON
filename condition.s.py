@@ -21,4 +21,5 @@
 # print ("protein") if food == "oats" else print("carbs") if food == "bread" else print("unknown food")
 #clever ternary operator
 age= int(input("age : "))
-vote=("yes" , " no")[age >= 18] 
+vote=("yes" , " no")[age == 18] 
+print(vote)
