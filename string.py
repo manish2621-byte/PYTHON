@@ -40,4 +40,6 @@ str="manish sharma"
 print(str.startswith("m"))
 str1=" hii i am the $ symbol $$$"
 print(str1.count("$"))
+str2="aabdcdeabhachaeaeavhaecaaea"
+print(str2.count("a"))
 
