@@ -31,6 +31,12 @@
 #  else:
 #     print("num2 and num1 both are equal")
 # c=input("do you want to continoue")
+raws=10
+for i in range(1,raws,+1):
+    for j in range(1,i,+1):
+        print("*")
+
+      
 
 
 
