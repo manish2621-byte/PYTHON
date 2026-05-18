@@ -63,22 +63,32 @@
 #     print("invalid persentage : ")
 
 #eligiable to blood donate
-age=int(input("enter your age : "))
-weight=float(input("enter your weight :"))
-health=input(" are you healthy?  (yes/no) :" )
-if(age >=18):
-    print("you are eligiable for blood donate")
-    if(weight>=50):
-         print(" you are eligiable for blood donate")
-         if(health == "yes"):
-              print(" you are eligiable for blood donate")
-         else:
-              print("you are not healthy for blood donate")
-    else:
-         print("your weight below to 50kg that why you not donate blood")
-else:
-     print("your age is less than 18 ")         
-
+# age=int(input("enter your age : "))
+# weight=float(input("enter your weight :"))
+# health=input(" are you healthy?  (yes/no) :" )
+# if(age >=18):
+#     print("you are eligiable for blood donate")
+#     if(weight>=50):
+#          print(" you are eligiable for blood donate")
+#          if(health == "yes"):
+#               print(" you are eligiable for blood donate")
+#          else:
+#               print("you are not healthy for blood donate")
+#     else:
+#          print("your weight below to 50kg that why you not donate blood")
+# else:
+#      print("your age is less than 18 ")         
+# str=" MANISH SHARMA "
+# #print(str.lower())
+# # print(str.capitalize())
+# # print(str.title())\
+# # print(str.strip())
+# # append()
+# a=[5,10,20]
+# # a.append(4)
+# # a.extend([1,2,3])
+# # a.remove(1)
+# print(a.index(10))
           
 
 
