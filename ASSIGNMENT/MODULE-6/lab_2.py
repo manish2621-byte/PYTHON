@@ -10,3 +10,21 @@ hindi_marks=85
 total= science_marks+math_marks+social_marks+english_marks+hindi_marks
 persentage= total/500*100
 print("your average marks is",persentage)
+ 
+ # CALCULATOR 
+a=55
+b=20
+print("operator is +,-,/,//,%,**")
+operator=input("enter your operator : ")
+if(operator == '+'):
+    print("addition is ",a+b)
+elif(operator == '-'):
+    print("substraction is ",a-b)
+elif(operator == '/'):
+    print("divison is ",a/b)
+elif(operator == '//'):
+    print("floor divison is ",a//b)
+elif(operator == '%'):
+    print("modulos is ",a%b)
+elif(operator == '**'):
+    print("exponentitation ",a**b)
