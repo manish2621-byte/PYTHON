@@ -18,9 +18,45 @@
 # l[1] = 'X'
 # # l[1:3] = ["k","l","m"]
 # l.insert(l,'K')
-# l.append(20)
+# l.append(20
 # print(l)
-l=["python","java","php","android","node"]
-k=[]
-for i in l:
-    if "a"
+# l=["python","java","php","android","node"]
+# k=[]
+# for i in l:
+# #     if "a"
+# a=["apple","banana","cherry"]
+# b=[1,2,3,4,5]
+# # a.extend(b)
+# # print(a)
+# a.pop(1)
+# print(a)
+# x = {"a", "b", "c"}
+# y = {"f", "e", "d", "c", "b", "a"}
+
+# z = x.issubset(y)
+
+# print(z)
+# x = {"f", "e", "d", "c", "b", "a"}
+# y = {"a", "b", "c"}
+
+# z = x.issuperset(y)
+
+# print(z)
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+
+# z = x.symmetric_difference(y)
+
+# # print(z)
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+
+# x.symmetric_difference_update(y)
+
+# print(x)
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+
+# z = x.union(y)
+
+# print(z)
