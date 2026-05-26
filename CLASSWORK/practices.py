@@ -63,8 +63,58 @@
 #   print(thislist[i])
 #   i = i + 1
 
-#list comprehension
-thislist = ["apple", "banana", "cherry"]
-[print(x) for  x in thislist]
+# #list comprehension
+# thislist = ["apple", "banana", "cherry"]
+# # [print(x) for  x in thislist]
+# y = list(thislist)
+# y[0] = "mango"
+# thislist = tuple(y)
+# print(thislist)
 
 
+# #set difference
+
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+
+# z = x.difference(y)
+
+# print(z)
+
+# # difference update
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+
+# x.difference_update(y)
+# print(x)
+
+# #discard
+# fruits = {"apple", "banana", "cherry"}
+
+# fruits.remove("banana")
+
+# print(fruits)
+
+# # issubset
+# x = {"a", "b", "c"}
+# y = {"f", "e", "d", "c", "b", "a"}
+
+# z = x.issubset(y)
+
+# print(z)
+
+#union
+
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+
+# z = x.union(y)
+
+# print(z)
+
+list1=[5,4,3,2,1]
+# list1.append(list2)
+# print(list1)list2=[7,8,9,5,9,10]
+
+print(list1.sort())
+print(list1)
