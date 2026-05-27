@@ -29,3 +29,10 @@
 # print(type(l))\
 # t=(10,)
 # print(type(t))
+
+
+#isdisjoint
+s1={1,2,3,4,5,6}
+s2={7,8,9,10,11,12}
+x=s1.isdisjoint(s2)
+print(x)
