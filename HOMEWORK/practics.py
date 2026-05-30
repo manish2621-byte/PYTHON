@@ -82,3 +82,19 @@
 # multipication()
 # division()
 # modulos()
+
+
+filename = input("Enter file name: ")
+email = input("Enter your email id: ")
+
+f = open(filename, "w")
+
+f.write("User Email ID: ")
+f.write(email)
+
+f.close()
+
+print("File created successfully")
+
+
+
