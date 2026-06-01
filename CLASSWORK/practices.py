@@ -102,8 +102,30 @@
 # student.update({"course" : "java"})
 # print(student)
 
-#isdisjoint
-s1={1,2,3,4,5,6}
-s2={7,8,9,10,11,12}
-x=s1.isdisjoint(s2)
-print(x)
+# perfect square using reduce
+from functools import reduce
+
+# l = [1, 5, 6, 7, 8, 9, 4, 6, 5, 3, 4]
+
+# perfect_squares = reduce(
+#     lambda x, y: x + [y] if int(y**0.5) ** 2 == y else x,
+#     l,
+#     []
+# )
+
+# print(perfect_squares)
+
+#  import math
+# # l =[1,5,6,7,8,9,4,6,5,3,4]
+
+# # k= filter(lambda x: math.isqrt(x)**2 == x,l)
+# # print(list(k))
+
+# l=[1,5,6,7,8,9,4,6,5,3,4]
+# k= map(lambda x: x if math.isqrt(x)**2 == x else None,l)
+# print(list(k))
+# l = ["python", "java", "php", "andrioid"]
+
+# result = list(filter(lambda x: "o" in x, l))
+
+# print(result)
