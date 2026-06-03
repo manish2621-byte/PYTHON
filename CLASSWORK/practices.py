@@ -124,8 +124,8 @@ from functools import reduce
 # l=[1,5,6,7,8,9,4,6,5,3,4]
 # k= map(lambda x: x if math.isqrt(x)**2 == x else None,l)
 # print(list(k))
-# l = ["python", "java", "php", "andrioid"]
+# `l = ["python", "java", "php", "andrioid"]
 
 # result = list(filter(lambda x: "o" in x, l))
 
-# print(result)
+# print(result)`
