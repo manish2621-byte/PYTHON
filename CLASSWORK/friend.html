@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Best Friend Day</title>
+</head>
+<body>
+
+<h2>Best Friend Day Wishes ❤️</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<input type="password" id="password" placeholder="Enter Password">
+<button onclick="showWish()">Open Wish</button>
+
+<h3 id="result"></h3>
+
+<script>
+function showWish() {
+    let name = document.getElementById("name").value.toLowerCase();
+    let password = document.getElementById("password").value;
+    let result = document.getElementById("result");
+
+    switch(name) {
+
+        case "priya":
+            if(password === "09/04"){
+                result.innerHTML =
+                "🌸 Happy Best Friend Day uno pro ! May God bless you with happiness, success and a beautiful life. ❤️";
+            } else {
+                result.innerHTML = "❌ Wrong Password";
+            }
+            break;
+
+        case "aditya":
+            if(password === "avoid cigarettes"){
+                result.innerHTML =
+                "🎉 Happy Best Friend Day Aditya! May God bless you with good health, success, and endless happiness and also avoid cigarettes okay. ✨";
+            } else {
+                result.innerHTML = "❌ Wrong Password";
+            }
+            break;
+
+        case "gopal":
+            if(password === "avoid cigarettes"){
+                result.innerHTML =
+                "😊 Happy Best Friend Day Gopal! Wishing you joy and success in every step of life and also avoid cigarettes okay.";
+            } else {
+                result.innerHTML = "❌ Wrong Password";
+            }
+            break;
+
+        case "vivek":
+            if(password === "best brother"){
+                result.innerHTML =
+                "🎈 Happy Best Friend Day Vivek! May all your dreams come true and always be the best brother.";
+            } else {
+                result.innerHTML = "❌ Wrong Password";
+            }
+            break;
+
+        case "keyur":
+            if(password === "my baby"){
+                result.innerHTML =
+                "🎊 Happy Best Friend Day Keyur! Stay happy, healthy, and successful always and i missing u every day baby.";
+            } else {
+                result.innerHTML = "❌ Wrong Password";
+            }
+            break;
+
+        default:
+            result.innerHTML = "Friend Not Found!";
+    }
+}
+</script>
+
+</body>
+</html>
