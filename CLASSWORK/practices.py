@@ -65,15 +65,51 @@ heroes = ["thor", "ironman","captain america","shaktiman"]
 # print(t)
 
 
-class inputoutstring(object):
-    def __init__(self):
-        self.s =""
-    def getstring(self):
-        self.s = input()
-    def printstring(self):
-        print(self.s.upper())
+# class inputoutstring(object):
+#     def __init__(self):
+#         self.s =""
+#     def getstring(self):
+#         self.s = input()
+#     def printstring(self):
+#         print(self.s.upper())
 
     
-strObj = inputoutstring()
-strObj.getstring()
-strObj.printstring()
+# strObj = inputoutstring()
+# strObj.getstring()
+# strObj.printstring()
+
+# import math
+# c=50
+# h=30
+# value = []
+# items=[x for x in input().split(',')]
+# for d in items:
+#     value.append(str(int(round(math.sqrt(2*c*float(d)/h)))))
+# print(','.join(value))
+
+
+# class Test:
+#     id = 10
+#     _name="manish"
+#     __email="manish@gmail.com"
+
+
+# t = Test()
+# print(dir(t))
+# print(t.id)
+# print(t._Test__email)
+
+class Student:
+    __id = 10
+
+    def get_id(self):
+        return self.__id
+
+    def set_id(self,a):
+        self.__id = a
+
+
+
+    s = Student()   
+    s.set_id(100)
+    print(s.get_id())
