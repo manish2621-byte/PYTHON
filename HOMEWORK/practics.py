@@ -1,100 +1,38 @@
+from abc import ABC, abstractmethod
 
-# def name():
-#     print("hello manish")
+class Account(ABC):
 
-# def addition():
-#     a=input("enter the first number: ")
-#     b=input("enter the second number: ")
-#     print("the sum is",int(a)+int(b))
+    def __init__(self, loan):
+        self.balance = loan
 
-# def substraction():
-#     a=input("enter the first number: ")
-#     b=input("enter the second number: ")
-#     print("the difference is",int(a)-int(b))
+    @abstractmethod
+    def deposit_loan(self, amount):
+        pass
 
-# def multipication():
-#     a=int(input("enter the first number: "))
-#     b=int(input("enter the second number: "))
-#     print("the difference is",a*b)
-
-# def division():
-#     a=int(input("enter the first number: "))
-#     b=int(input("enter the second number: "))
-#     print("the difference is",a/b)
-
-# def modulos():
-#     a=int(input("enter the first number: "))
-#     b=int(input("enter the second number: "))
-#     print("the difference is",a%b) 
+    @abstractmethod
+    def withdraw_loan(self, amount):
+        pass
 
 
-    
-    
+class Saving(Account):
 
-# name()
-# addition()
-# substraction()
-# multipication()
-# division()
-# modulos()
+    def deposit_loan(self, amount):
+        self.balance -= amount
 
+        if self.balance <= 0:
+            print("Loan fully paid")
+            self.balance = 0
 
-
-#calculator using function with return type
+    def withdraw_loan(self, amount):
+        self.balance += amount
 
 
-# def addition(a,b):
-#     return a+b
+s = Saving(10000)
 
-# def substraction(a,b):
-#     return a-b
+print("Loan:", s.balance)
 
-# def multipication(a,b):
-#     return a*b
+s.deposit_loan(5000)
+print("Remaining Loan:", s.balance)
 
-# def division(a,b):
-#     return a/b
-
-# def modulos(a,b):
-#     return a%b
-
-
-# operators=input("enter the operation you want to perform: ")
-# a=int(input("enter the first number: "))
-# b=int(input("enter the second number: "))
-
-# match(operators):
-#     case "+":
-#         print("the sum is",addition(a,b))
-#     case "-":
-#         print("the difference is",substraction(a,b))
-#     case "*":
-#         print("the product is",multipication(a,b))
-#     case "/":
-#         print("the quotient is",division(a,b))
-#     case "%":
-#         print("the remainder is",modulos(a,b))
-
-
-
-# addition()
-# substraction()
-# multipication()
-# division()
-# modulos()
-
-
-filename = input("Enter file name: ")
-email = input("Enter your email id: ")
-
-f = open(filename, "w")
-
-f.write("User Email ID: ")
-f.write(email)
-
-f.close()
-
-print("File created successfully")
-
-
-
+s.deposit_loan(5000)
+print("Remaining Loan:", s.balance)
