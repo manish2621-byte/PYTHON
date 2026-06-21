@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annu Quiz ❤️</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin:0;
+    padding:20px;
+    transition:0.5s;
+    color:white;
+}
+.container{
+    max-width:500px;
+    margin:auto;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+    border-radius:20px;
+}
+button{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+#score{
+    font-size:20px;
+    margin-bottom:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>❤️ Annu Special Quiz ❤️</h1>
+<div id="score">💋 Kisses: 0</div>
+<h2 id="question"></h2>
+<div id="options"></div>
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"🌸 What is special today?",
+options:["We will meet together in snap","Saturday"],
+correct:[0],
+bg:"#ff6b81"
+},
+
+{
+q:"😊 What was my first question I asked to you?",
+options:["How's ur day","I love you","Meri pyaari annu","Good"],
+correct:[0],
+bg:"#6c5ce7"
+},
+
+{
+q:"❤️ How did I propose you at first time?",
+options:["When I call u","In WhatsApp"],
+correct:[0],
+bg:"#00b894"
+},
+
+{
+q:"🥰 Which favorite name I used to call you?",
+options:["Annu","Meri pyaari annu","Radha","Cuteeeeeeeeeeeee"],
+correct:[1,2],
+bg:"#fd79a8"
+},
+
+{
+q:"🛕 Which place do you want to go with me?",
+options:["Kedarnath","Vietnam"],
+correct:[0],
+bg:"#0984e3"
+},
+
+{
+q:"✈️ Which place I want to go with you for honeymoon?",
+options:["Vietnam","Rajasthan"],
+correct:[0],
+bg:"#e17055"
+},
+
+{
+q:"💖 When I say I love you, are you saying me too?",
+options:["Yes","No"],
+correct:[0],
+bg:"#00cec9"
+},
+
+{
+q:"👕 Which dress I called you 'I will tie your shoelaces'?",
+options:[
+"In black shirt and grey jeans",
+"In pink tshirt",
+"In wine top",
+"In white tshirt and pajama"
+],
+correct:[0],
+bg:"#a29bfe"
+},
+
+{
+q:"🎵 Which singer is our favorite?",
+options:["Arijit Singh","Manish Sharma"],
+correct:[0],
+bg:"#d63031"
+},
+
+{
+q:"🎬 Which actor is our favorite?",
+options:["Emraan Hashmi","Sushant Singh Rajput"],
+correct:[0],
+bg:"#2d3436"
+},
+
+{
+q:"😍 What is my favorite actress?",
+options:[
+"Priyanka Chopra",
+"Kirti Hassan",
+"Annu Singh",
+"Deepika Padukone"
+],
+correct:[2],
+bg:"#e84393"
+},
+
+{
+q:"📱 Which was the first WhatsApp short status you sent me?",
+options:[
+"Short Status 1",
+"Short Status 2"
+],
+correct:[1],
+bg:"#00b894"
+},
+
+{
+q:"💕 Who are you for me?",
+options:["Jaan ho meri","Only gf"],
+correct:[0],
+bg:"#6c5ce7"
+}
+
+];
+
+let current=0;
+let score=0;
+
+function loadQuestion(){
+
+document.body.style.background=questions[current].bg;
+
+document.getElementById("question").innerHTML=
+"Level "+(current+1)+"<br><br>"+questions[current].q;
+
+let html="";
+
+questions[current].options.forEach((opt,index)=>{
+html+=`<button onclick="checkAnswer(${index})">${opt}</button>`;
+});
+
+document.getElementById("options").innerHTML=html;
+}
+
+function checkAnswer(index){
+
+let correct=questions[current].correct;
+
+if(correct.includes(index)){
+score++;
+document.getElementById("score").innerHTML=
+"💋 Kisses: "+score;
+}
+
+current++;
+
+if(current<questions.length){
+loadQuestion();
+}
+else{
+
+let totalCorrect = 12; // all single-answer questions
+let perfect = score >= 12;
+
+document.querySelector(".container").innerHTML=`
+<h1>🎉 Quiz Completed 🎉</h1>
+<h2>💋 Total Kisses: ${score}</h2>
+
+${perfect ? `
+<h2>💋💋💋💋💋💋💋💋💋💋</h2>
+<p style="font-size:22px;">
+❤️ Radha aap mera sab kuch ho ❤️
+<br><br>
+muze pata hai ki imposible hai
+par mein toh pagluu hu na
+aap ke liye sab kuch karunga
+meri radha 💕
+</p>
+` : `
+<h3>❤️ Thank You For Playing ❤️</h3>
+`}
+`;
+}
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annu Quiz ❤️</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+text-align:center;
+padding:20px;
+transition:0.5s;
+color:white;
+}
+
+.quiz-box{
+max-width:500px;
+margin:auto;
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:15px;
+}
+
+button{
+padding:10px 20px;
+margin:8px;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.option{
+display:block;
+margin:10px auto;
+padding:10px;
+width:90%;
+}
+
+#score{
+font-size:22px;
+margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<div class="quiz-box">
+<h2 id="question"></h2>
+
+<div id="options"></div>
+
+<h3 id="score">😘 0</h3>
+</div>
+
+<audio id="song" src="song.mp3"></audio>
+
+<script>
+
+let score = 0;
+let current = 0;
+
+const colors = [
+"#ff4d6d",
+"#8338ec",
+"#3a86ff",
+"#06d6a0",
+"#f77f00",
+"#ef476f",
+"#118ab2",
+"#7209b7",
+"#ff006e",
+"#4361ee",
+"#2a9d8f",
+"#e76f51"
+];
+
+const quiz = [
+
+{
+q:"What is special today? ❤️",
+type:"single",
+options:["We will meet together in snap","Saturday"],
+answer:[0]
+},
+
+{
+q:"What was my first question I asked to you?",
+type:"single",
+options:["How's ur day","I love you","Meri Pyaari Annu","Good"],
+answer:[0]
+},
+
+{
+q:"How did I propose you at first time?",
+type:"single",
+options:["When I call u","In WhatsApp"],
+answer:[0]
+},
+
+{
+q:"Which favourite name I used to call you?",
+type:"multi",
+options:["Annu","Meri Pyaari Annu","Radha","Cuteeeeeeeeeeeee"],
+answer:[1,2]
+},
+
+{
+q:"Which place do you want to go with me?",
+type:"single",
+options:["Kedarnath","Vietnam"],
+answer:[0]
+},
+
+{
+q:"Which place I want to go with you for honeymoon?",
+type:"single",
+options:["Vietnam","Rajasthan"],
+answer:[0]
+},
+
+{
+q:"When I say I love you, you say me too?",
+type:"single",
+options:["Yes","No"],
+answer:[0]
+},
+
+{
+q:"Which dress I called you 'I will tie your shoelaces'?",
+type:"single",
+options:[
+"Black shirt and grey jeans",
+"Pink tshirt",
+"Wine top",
+"White tshirt and pajama"
+],
+answer:[0]
+},
+
+{
+q:"Which singer we both favourite?",
+type:"single",
+options:["Arijit Singh","Manish Sharma"],
+answer:[0]
+},
+
+{
+q:"Which actor we both favourite?",
+type:"single",
+options:["Emraan Hashmi","Sushant Singh Rajput"],
+answer:[0]
+},
+
+{
+q:"What is my favourite actress?",
+type:"single",
+options:[
+"Priyanka Chopra",
+"Kirti Hassan",
+"Annu Singh",
+"Deepika Padukone"
+],
+answer:[2]
+},
+
+{
+q:"Which was the first WhatsApp short status you sent me?",
+type:"single",
+options:[
+"Short Status 1",
+"Short Status 2"
+],
+answer:[1]
+},
+
+{
+q:"Who are you for me?",
+type:"single",
+options:["Jaan Ho Meri ❤️","Only GF"],
+answer:[0]
+}
+
+];
+
+function loadQuestion(){
+
+document.body.style.background =
+colors[current % colors.length];
+
+let q = quiz[current];
+
+document.getElementById("question").innerHTML =
+"Level "+(current+1)+"<br><br>"+q.q;
+
+let html="";
+
+if(q.type==="single"){
+
+q.options.forEach((opt,index)=>{
+html += `
+<button class="option"
+onclick="checkSingle(${index})">
+${opt}
+</button>`;
+});
+
+}else{
+
+q.options.forEach((opt,index)=>{
+html += `
+<label>
+<input type="checkbox" value="${index}">
+ ${opt}
+</label><br><br>`;
+});
+
+html += `<button onclick="checkMulti()">Submit</button>`;
+}
+
+document.getElementById("options").innerHTML=html;
+}
+
+function checkSingle(choice){
+
+let q=quiz[current];
+
+if(q.answer.includes(choice)){
+score++;
+document.getElementById("score").innerHTML=
+"😘 ".repeat(score);
+}
+
+nextQuestion();
+}
+
+function checkMulti(){
+
+let q=quiz[current];
+
+let selected=[];
+
+document.querySelectorAll("input[type=checkbox]:checked")
+.forEach(c=>{
+selected.push(Number(c.value));
+});
+
+selected.sort();
+let ans=[...q.answer].sort();
+
+if(JSON.stringify(selected)===JSON.stringify(ans)){
+score++;
+document.getElementById("score").innerHTML=
+"😘 ".repeat(score);
+}
+
+nextQuestion();
+}
+
+function nextQuestion(){
+
+current++;
+
+if(current<quiz.length){
+loadQuestion();
+}else{
+
+let total = quiz.length;
+
+if(score===total){
+
+document.getElementById("question").innerHTML=
+"🎉 PERFECT SCORE 🎉<br><br>10000 KISSES 😘😘😘😘😘😘😘😘😘😘";
+
+document.getElementById("options").innerHTML=
+"<h2>❤️ I Love You ❤️</h2>";
+
+document.getElementById("song").play();
+
+}else{
+
+document.getElementById("question").innerHTML=
+"Quiz Completed ❤️";
+
+document.getElementById("options").innerHTML=
+"<h2>You scored "+score+
+" out of "+total+
+"<br><br>😘".repeat(score)+"</h2>";
+}
+}
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

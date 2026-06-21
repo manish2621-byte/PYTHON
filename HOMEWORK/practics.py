@@ -139,18 +139,33 @@
 # print(car1.start())
 
 
-class A:
-    varA = "welcome to class A"
+# class A:
+#     varA = "welcome to class A"
 
-class B:
-    varB = "welcome to class B"
+# class B:
+#     varB = "welcome to class B"
 
-class C(A, B):
-    varC = "welcome to class C"
+# class C(A, B):
+#     varC = "welcome to class C"
 
-c1 = C()
+# c1 = C()
 
-print(c1.varC)
-print(c1.varB)
-print(c1.varA)
+# print(c1.varC)
+# print(c1.varB)
+# print(c1.varA)
 
+
+class Person:
+    name = "anonymous"
+
+
+    # def changeName(self, name):
+    #     self.__class__.name = "rahul"
+    @classmethod
+    def changeName(cls, name):
+        cls.name = name 
+
+p1 = Person()
+p1.changeName("rahul Kumar")
+print(p1.name)
+print(Person.name) 
