@@ -16,13 +16,37 @@ import re
 # k = re.split(" ", st)
 # print(k)
 
-import re
+# import re
 
-k = re.findall("s.n","sun risn in rsk in")
-k = re.findall("^in","sun risn in rsk in")
-k = re.findall("in$","sun risn in rsk in")
-k = re.findall("sa*n","sun risn in rsk in")
-k = re.findall("su+n","sun risn in rsk in")
-k = re.findall("su?n","sun risn in rsk in")
+# k = re.findall("s.n","sun risn in rsk in")
+# k = re.findall("^in","sun risn in rsk in")
+# k = re.findall("in$","sun risn in rsk in")
+# k = re.findall("sa*n","sun risn in rsk in")
+# k = re.findall("su+n","sun risn in rsk in")
+# k = re.findall("su?n","sun risn in rsk in")
 
-print(k)
+# print(k)
+
+# k = re.findall("su?h", "sn risn in rks in")
+# print(k)
+
+# k = re.findall(r"\bsun", "sun sunrisusn in pks in 5 6 5B @")
+# print(k)
+
+# import re
+
+# k = re.search(r"^[0-9]{10}$", "1234567890")
+
+# if k is not None:
+#     print("valid")
+# else:
+#     print("invalid")
+
+# k = input("Enter a name: ")
+# k = re.search(r"^[a-zA-Z]{2,10}$", k)
+
+# if k is not None:
+#     print("valid")
+# else:
+#     print("invalid")
+

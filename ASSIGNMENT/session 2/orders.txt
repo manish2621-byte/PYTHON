@@ -1,0 +1,5 @@
+order 1: pizza margherita
+order 2:burger combo
+order3: biryani special
+order 4: pasta alfredo
+order 5: ice cream sundae
